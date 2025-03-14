@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section class="product-container">
+    <header>
+      <div class="navigation">
+        <a href="/" class="logo">
+          <img src="/images/logo.svg" alt="">
+        </a>
+        <nav>
+          <a href="#" >
+            <span>Collections</span>
+            <div class="line"></div>
+          </a>
+          <a href="#" >
+            <span>Men</span>
+            <div class="line"></div>
+          </a>
+          <a href="#" class="active">
+            <span>Women</span>
+            <div class="line"></div>
+          </a>
+          <a href="#" >
+            <span>About</span>
+            <div class="line"></div>
+          </a>
+          <a href="#" >
+            <span>Contact</span>
+            <div class="line"></div>
+          </a>
+        </nav>
+      </div>
+      <div class="links">
+        <div class="basket">
+          <div class="basket-container dropdown-toggle"> 
+            <img src="/images/icon-cart.svg">
+            <div class="count" style="display: none;">0</div>
+          </div>
+          <div class="dropdown-menu">
+            <div class="title">Cart</div>
+            <div class="parent" id="cart-product">
+              
+            </div>
+            <a href="#" class="checkout">Checkout</a>
+
+          </div>
+        </div>
+        <a href="#" class="avatar">
+          <img src="/images/image-avatar.png" alt="">
+        </a>
+      </div>
+    </header>
+
+    <div class="product-details">
+      <div class="leftside">
+        <div class="main-img">
+          <img id="largeImage" src="/images/image-product-1.jpg" alt="">
+        </div>
+        <div class="thumbnails">
+          <img class="thumbnail active" src="/images/image-product-1-thumbnail.jpg" data-large="/images/image-product-1.jpg">
+          <img class="thumbnail" src="/images/image-product-2-thumbnail.jpg" data-large="/images/image-product-2.jpg">
+          <img class="thumbnail" src="/images/image-product-3-thumbnail.jpg" data-large="/images/image-product-3.jpg">
+          <img class="thumbnail" src="/images/image-product-4-thumbnail.jpg" data-large="/images/image-product-4.jpg">
+        </div>
+      </div>
+      <div class="rightside">
+        <div class="cat">Sneaker Company</div>
+        <h1>Fall Limited Edition Sneakers</h1>
+        <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        <div class="price">
+          <h2>$125.00</h2>
+          <div class="solde">50%</div>
+        </div>
+        <div class="initial-price">$250.00</div>
+        <div class="buttons">
+          <div class="quantity">
+            <img src="/images/icon-minus.svg" class="decrease">
+            <div class="nbr" id="quantity">0</div>
+            <img src="/images/icon-plus.svg" class="increase">
+          </div>
+          <div class="add" id="add-to-cart">
+            <img src="/images/black-cart.svg" alt="">
+            <span>Add to cart</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+      <div class="light-container">
+        <div class="close">
+          <img src="/images/white-close.svg">
+        </div>
+        <div class="main">
+          <button class="prev"><img src="/images/icon-previous.svg" alt=""></button>
+          <img id="lightboxImg" src="" alt="">
+          <button class="next"><img src="/images/icon-next.svg" alt=""></button>
+        </div>
+        <div class="lightbox-thumbnails">
+          <img class="lightbox-thumbnail" src="/images/image-product-1-thumbnail.jpg" data-large="/images/image-product-1.jpg" alt="">
+          <img class="lightbox-thumbnail" src="/images/image-product-2-thumbnail.jpg" data-large="/images/image-product-2.jpg" alt="">
+          <img class="lightbox-thumbnail" src="/images/image-product-3-thumbnail.jpg" data-large="/images/image-product-3.jpg" alt="">
+          <img class="lightbox-thumbnail" src="/images/image-product-4-thumbnail.jpg" data-large="/images/image-product-4.jpg" alt="">
+        </div>
+      </div> 
+  </div>
+
+  </section>
+  
+  <div class="attribution">
+    Challenge by &nbsp;<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"> Frontend Mentor</a>. 
+    Coded by &nbsp;<a href="https://www.linkedin.com/in/emma-geo-kanfany/"> Emma Geo Kanfany</a>.
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+</body>
+</html>
