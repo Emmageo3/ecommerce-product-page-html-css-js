@@ -495,22 +495,10 @@ img.lightbox-thumbnail.active, img.thumbnail.active {
         display: block;
     }
 
-    /* Masquer le menu par défaut */
-.header-menu {
-    display: none;
-  }
-  
-  /* Assombrir l'arrière-plan */
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Ombre à 50% */
-    z-index: 9;
-    display: none; /* Par défaut, pas visible */
-  }
+    header .navigation{
+        gap: 20px;
+    }
+
 }
 
 @media (max-width: 499px){
@@ -586,5 +574,13 @@ img.lightbox-thumbnail.active, img.thumbnail.active {
 
     .buttons{
         flex-direction: column;
+    }
+
+    .mobile{
+        display: block;
+    }
+
+    header .navigation{
+        gap: 20px;
     }
 }
