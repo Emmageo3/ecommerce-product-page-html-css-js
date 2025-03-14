@@ -10,6 +10,17 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
+    $(".header-toggle").click(function (e) {
+        e.stopPropagation(); 
+        $(".header-menu").toggle();
+    });
+
+    $(document).click(function () {
+        $(".header-menu").hide();
+    });
+});
+
+$(document).ready(function () {
     let images = $(".lightbox-thumbnail").map(function () {
         return $(this).attr("data-large");
     }).get();
@@ -142,6 +153,8 @@ $(document).ready(function() {
       $("#cart-product").html('<p class="empty">Your cart is empty.</p>');
     }
   });
+
+
   
   
   
