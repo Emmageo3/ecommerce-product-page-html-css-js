@@ -17,6 +17,8 @@ body{
 
 .product-container{
     margin: 28px 11% 128px 11%;
+    max-width: 1440px;
+    
 }
 
 header{
@@ -79,9 +81,9 @@ header .links .avatar img{
 
 .product-details{
     display: flex;
-    margin: 96px 8%;
     margin-bottom: 0;
     justify-content: space-between;
+    margin: 96px 5%;
 }
 
 .product-details .leftside{
@@ -99,6 +101,7 @@ header .links .avatar img{
     height: 49vh;
     object-fit: cover;
     cursor: pointer;
+    object-position: top;
 }
 
 .thumbnails{
@@ -109,7 +112,9 @@ header .links .avatar img{
 }
 
 .thumbnails img{
-    width: 88px;
+    width: 19%;
+    object-fit: cover;
+    object-position: top;
     height: 88px;
     border-radius: 10px;
     cursor: pointer;
