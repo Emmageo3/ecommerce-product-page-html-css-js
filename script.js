@@ -1,13 +1,25 @@
-$(document).ready(function () {
-    // Toggle dropdown menu
-    $(".dropdown-toggle").click(function (e) {
+// Toggle dropdown menu
+    document.querySelector(".dropdown-toggle").addEventListener("click", function(e) {
         e.stopPropagation(); 
-        $(".dropdown-menu").toggle();
+        var dropdownMenu = document.querySelector(".dropdown-menu");
+        dropdownMenu.style.display = (dropdownMenu.style.display === "none" || dropdownMenu.style.display === "") ? "block" : "none";
     });
 
-    $(document).click(function () {
-        $(".dropdown-menu").hide();
+    // Close dropdown menu when clicking outside
+    document.addEventListener("click", function() {
+        var dropdownMenu = document.querySelector(".dropdown-menu");
+        dropdownMenu.style.display = "none";
     });
+
+    // Prevent closing the menu when clicking inside the dropdown
+    document.querySelector(".dropdown-toggle").addEventListener("click", function(e) {
+        e.stopPropagation();
+    });
+// end 
+
+
+$(document).ready(function () {
+    
 
     // Toggle header menu
     $(".header-toggle").click(function (e) {
