@@ -18,74 +18,86 @@
 // end 
 
 
+
+// Lightbox functionality
+let images = [];
+let thumbnails = document.querySelectorAll('.lightbox-thumbnail');
+
+thumbnails.forEach(function (thumbnail) {
+    images.push(thumbnail.getAttribute('data-large'));
+});
+
+let currentIndex = 0;
+
+document.getElementById('largeImage').addEventListener('click', function () {
+    let imgSrc = this.getAttribute('src');
+    currentIndex = images.indexOf(imgSrc);
+    document.getElementById('lightboxImg').setAttribute('src', imgSrc);
+    document.querySelectorAll('.lightbox-thumbnail').forEach(function (el) {
+        el.classList.remove('active');
+    });
+    document.querySelectorAll('.lightbox-thumbnail')[currentIndex].classList.add('active');
+    document.getElementById('lightbox').style.display = 'block';
+});
+
+document.querySelectorAll('.thumbnail').forEach(function (thumbnail) {
+    thumbnail.addEventListener('click', function () {
+        let newSrc = this.getAttribute('data-large');
+        currentIndex = images.indexOf(newSrc);
+        document.getElementById('largeImage').setAttribute('src', newSrc);
+        document.querySelectorAll('.thumbnail').forEach(function (el) {
+            el.classList.remove('active');
+        });
+        document.querySelectorAll('.thumbnail')[currentIndex].classList.add('active');
+    });
+});
+
+document.querySelectorAll('.lightbox-thumbnail').forEach(function (thumbnail) {
+    thumbnail.addEventListener('click', function () {
+        let newSrc = this.getAttribute('data-large');
+        currentIndex = images.indexOf(newSrc);
+        document.getElementById('lightboxImg').setAttribute('src', newSrc);
+        document.querySelectorAll('.lightbox-thumbnail').forEach(function (el) {
+            el.classList.remove('active');
+        });
+        this.classList.add('active');
+    });
+});
+
+document.querySelector('.main button:first-of-type').addEventListener('click', function () {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    document.getElementById('lightboxImg').setAttribute('src', images[currentIndex]);
+    document.querySelectorAll('.lightbox-thumbnail').forEach(function (el) {
+        el.classList.remove('active');
+    });
+    document.querySelectorAll('.lightbox-thumbnail')[currentIndex].classList.add('active');
+});
+
+document.querySelector('.main button:last-of-type').addEventListener('click', function () {
+    currentIndex = (currentIndex + 1) % images.length;
+    document.getElementById('lightboxImg').setAttribute('src', images[currentIndex]);
+    document.querySelectorAll('.lightbox-thumbnail').forEach(function (el) {
+        el.classList.remove('active');
+    });
+    document.querySelectorAll('.lightbox-thumbnail')[currentIndex].classList.add('active');
+});
+
+document.querySelector('.close').addEventListener('click', function () {
+    document.getElementById('lightbox').style.display = 'none';
+});
+
+document.addEventListener('keyup', function (e) {
+    if (e.key === 'Escape') {
+        document.getElementById('lightbox').style.display = 'none';
+    }
+});
+
+
+
 $(document).ready(function () {
     
 
-    // Toggle header menu
-    $(".header-toggle").click(function (e) {
-        e.stopPropagation(); 
-        $(".header-menu").toggle();
-    });
-
-    $(document).click(function () {
-        $(".header-menu").hide();
-    });
-
-    // Lightbox functionality
-    let images = $(".lightbox-thumbnail").map(function () {
-        return $(this).attr("data-large");
-    }).get();
-
-    let currentIndex = 0;
-
-    $("#largeImage").click(function () {
-        let imgSrc = $(this).attr("src");
-        currentIndex = images.indexOf(imgSrc);
-        $("#lightboxImg").attr("src", imgSrc);
-        $(".lightbox-thumbnail").removeClass("active");
-        $(".lightbox-thumbnail").eq(currentIndex).addClass("active");
-        $("#lightbox").fadeIn();
-    });
-
-    $(".thumbnail").click(function () {
-        let newSrc = $(this).attr("data-large");
-        currentIndex = images.indexOf(newSrc);
-        $("#largeImage").attr("src", newSrc);
-        $(".thumbnail").removeClass("active");
-        $(".thumbnail").eq(currentIndex).addClass("active");
-    });
-
-    $(".lightbox-thumbnail").click(function () {
-        let newSrc = $(this).attr("data-large");
-        currentIndex = images.indexOf(newSrc);
-        $("#lightboxImg").attr("src", newSrc);
-        $(".lightbox-thumbnail").removeClass("active");
-        $(this).addClass("active");
-    });
-
-    $(".main button:first-of-type").click(function () {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        $("#lightboxImg").attr("src", images[currentIndex]);
-        $(".lightbox-thumbnail").removeClass("active");
-        $(".lightbox-thumbnail").eq(currentIndex).addClass("active");
-    });
-
-    $(".main button:last-of-type").click(function () {
-        currentIndex = (currentIndex + 1) % images.length;
-        $("#lightboxImg").attr("src", images[currentIndex]);
-        $(".lightbox-thumbnail").removeClass("active");
-        $(".lightbox-thumbnail").eq(currentIndex).addClass("active");
-    });
-
-    $(".close").click(function () {
-        $("#lightbox").fadeOut();
-    });
-
-    $(document).keyup(function (e) {
-        if (e.key === "Escape") {
-            $("#lightbox").fadeOut();
-        }
-    });
+    
 
     // Cart functionality
     let quantity = 0;
