@@ -154,9 +154,7 @@ $(document).ready(function () {
         $("#side-menu").css("left", "-250px");
     });
 
-    $(".close-menu").click(function() {
-        console.log('ferme');
-        $("#overlay").fadeOut();  // Masquer l'overlay
-        $("#side-menu").css("left", "-250px");  // Faire glisser le menu à gauche pour le cacher
-    });
+    document.getElementById('emma').addEventListener('click', function(){
+        console.log('emma')
+    })
 });
