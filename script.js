@@ -108,13 +108,13 @@ $(document).ready(function () {
 
             let cartProductHtml = `
                 <div class="product">
-                    <img src="/images/image-product-1-thumbnail.jpg" alt="">
+                    <img src="https://emmageo3.github.io/ecommerce-product-page-html-css-js/images/image-product-1-thumbnail.jpg" alt="">
                     <div class="details">
                         <p>Fall Limited Edition Sneakers</p>
                         <p>$125.00 x ${quantity}  &nbsp;&nbsp;<span>$${totalPrice}</span></p>
                     </div>
                     <a href="#" class="remove">
-                        <img src="/images/icon-delete.svg" alt="">
+                        <img src="https://emmageo3.github.io/ecommerce-product-page-html-css-js/images/icon-delete.svg" alt="">
                     </a>
                 </div>
             `;
@@ -144,17 +144,19 @@ $(document).ready(function () {
         $("#cart-product").html('<p class="empty">Your cart is empty.</p>');
     }
 
-    // Lorsque l'on clique sur le bouton hamburger
     $("#hamburger").click(function() {
-        // Afficher l'overlay et faire glisser le menu
         $("#overlay").fadeIn();
         $("#side-menu").css("left", "0");
     });
 
-    // Lorsque l'on clique sur l'overlay (pour fermer le menu)
     $("#overlay").click(function() {
-        // Masquer l'overlay et faire glisser le menu à gauche
         $("#overlay").fadeOut();
         $("#side-menu").css("left", "-250px");
+    });
+
+    $(".close-menu").click(function() {
+        console.log('ferme');
+        $("#overlay").fadeOut();  // Masquer l'overlay
+        $("#side-menu").css("left", "-250px");  // Faire glisser le menu à gauche pour le cacher
     });
 });
