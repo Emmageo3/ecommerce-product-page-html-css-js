@@ -143,4 +143,18 @@ $(document).ready(function () {
         $(".checkout").hide();
         $("#cart-product").html('<p class="empty">Your cart is empty.</p>');
     }
+
+    // Lorsque l'on clique sur le bouton hamburger
+    $("#hamburger").click(function() {
+        // Afficher l'overlay et faire glisser le menu
+        $("#overlay").fadeIn();
+        $("#side-menu").css("left", "0");
+    });
+
+    // Lorsque l'on clique sur l'overlay (pour fermer le menu)
+    $("#overlay").click(function() {
+        // Masquer l'overlay et faire glisser le menu à gauche
+        $("#overlay").fadeOut();
+        $("#side-menu").css("left", "-250px");
+    });
 });

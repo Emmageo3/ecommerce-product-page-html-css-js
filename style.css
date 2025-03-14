@@ -499,6 +499,33 @@ img.lightbox-thumbnail.active, img.thumbnail.active {
         gap: 20px;
     }
 
+    .product-details{
+        margin-bottom: 50Px;
+        padding-bottom: 50Px;
+    }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+    }
+
+    .side-menu {
+        position: fixed;
+        top: 0;
+        left: -250px; /* Caché à gauche */
+        width: 250px;
+        height: 100%;
+        background-color: #fff;
+        transition: left 0.3s ease;
+        z-index: 1002;
+    }
+
 }
 
 @media (max-width: 499px){
